@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-users = []
+
+users = []  # список користувачів (у пам'яті)
 
 @app.route("/")
 def home():
@@ -23,6 +24,16 @@ def register():
 @app.route("/users")
 def show_users():
     return render_template("users.html", users=users)
+
+# 🔹 НОВА СТОРІНКА – наприклад, Галерея
+@app.route("/gallery")
+def gallery():
+    images = [
+        {"title": "Пейзаж 1", "url": "https://picsum.photos/seed/p1/600/400"},
+        {"title": "Пейзаж 2", "url": "https://picsum.photos/seed/p2/600/400"},
+        {"title": "Пейзаж 3", "url": "https://picsum.photos/seed/p3/600/400"},
+    ]
+    return render_template("gallery.html", images=images)
 
 if __name__ == "__main__":
     app.run(debug=True)

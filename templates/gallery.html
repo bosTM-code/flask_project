@@ -2,17 +2,13 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Головна сторінка</title>
-
-  <!-- Favicon -->
+  <title>Галерея</title>
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
-  <!-- Стилі -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
-    <h1>Вітаємо у Flask-додатку!</h1>
+    <h2>Галерея</h2>
 
     <nav class="navbar">
       <a href="{{ url_for('home') }}">Головна</a>
@@ -21,11 +17,16 @@
       <a href="{{ url_for('gallery') }}">Галерея</a>
     </nav>
 
-    <p>Це головна сторінка Flask-проєкту.</p>
-
-    <div class="footer">
-      © {{ 2025 }} Бережний Святослав - Flask-проєкт
+    <div class="gallery-grid">
+      {% for img in images %}
+        <div class="gallery-card">
+          <img src="{{ img.url }}" alt="{{ img.title }}">
+          <div class="caption">{{ img.title }}</div>
+        </div>
+      {% endfor %}
     </div>
+
+    <a href="{{ url_for('home') }}" class="btn">Повернутися на головну</a>
   </div>
 </body>
 </html>

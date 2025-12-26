@@ -1,0 +1,134 @@
+/* Базові стилі для всього сайту */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0f172a;           /* темно-синій фон */
+    color: #e5e7eb;                /* світлий текст */
+}
+
+/* Контейнер по центру */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #111827;          /* трохи світліший блок */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    margin-top: 0;
+    color: #f9fafb;
+}
+
+/* Навігація */
+.navbar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #e5e7eb;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #1f2937;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 0.95rem;
+}
+
+.navbar a:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Кнопка */
+.btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 0.95rem;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Форми */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Список користувачів */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Галерея */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.gallery-card {
+    background: #020617;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-card img {
+    width: 100%;
+    display: block;
+}
+
+.gallery-card .caption {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+}
+
+/* Маленький підпис внизу */
+.footer {
+    margin-top: 24px;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Результат реєстрації</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Реєстрація успішна!</h2>
+
+    <p><b>Ім’я:</b> {{ name }}</p>
+    <p><b>Email:</b> {{ email }}</p>
+    <p><b>Повідомлення:</b> {{ message }}</p>
+
+    <a href="{{ url_for('home') }}" class="btn">Повернутися на головну</a>
+  </div>
+</body>
+</html>

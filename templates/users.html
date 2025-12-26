@@ -2,17 +2,13 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Головна сторінка</title>
-
-  <!-- Favicon -->
+  <title>Список користувачів</title>
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
-  <!-- Стилі -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
-    <h1>Вітаємо у Flask-додатку!</h1>
+    <h2>Список зареєстрованих користувачів</h2>
 
     <nav class="navbar">
       <a href="{{ url_for('home') }}">Головна</a>
@@ -21,11 +17,17 @@
       <a href="{{ url_for('gallery') }}">Галерея</a>
     </nav>
 
-    <p>Це головна сторінка Flask-проєкту.</p>
+    {% if users %}
+      <ul>
+        {% for user in users %}
+          <li><b>{{ user.name }}</b> ({{ user.email }}) — {{ user.message }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Поки що немає зареєстрованих користувачів.</p>
+    {% endif %}
 
-    <div class="footer">
-      © {{ 2025 }} Бережний Святослав - Flask-проєкт
-    </div>
+    <a href="{{ url_for('home') }}" class="btn">Повернутися на головну</a>
   </div>
 </body>
 </html>
